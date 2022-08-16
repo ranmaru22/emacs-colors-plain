@@ -32,23 +32,25 @@
 (deftheme colors-plain
   "Minimal theme for Emacs.")
 
-(let (())
+(let ((bg "#181818")
+      (fg "#e4e4e4"))
 
   (custom-theme-set-variables
    'colors-plain
    '(frame-background-mode (quote dark)))
 
   (custom-theme-set-faces
-   'colors-plain)
-
-
-
+   'colors-plain
+   `(default ((t (:foreground ,fg :background ,bg))))
+   )
   )
 
 ;;;###autoload
 (when load-file-name
   (add-to-list 'custom-theme-load-path
-               (file-name-as-directory (file-name-directory load-file-name))))
+               (file-name-as-directory
+                (file-name-directory load-file-name))))
+;; Automatically add this theme to the load path.
 
 (provide-theme 'colors-plain)
 
