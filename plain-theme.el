@@ -1,7 +1,7 @@
-;;; emacs-colors-plain.el -- Minimal theme for Emacs.
+;;; plain-theme.el -- Minimal theme for Emacs 24.
 
 ;; Author: Alex Sun <alexsun82@icloud.com>
-;; URL: https://github.com/ranmaru22/emacs-colors-plain
+;; URL: https://github.com/ranmaru22/emacs-plain-theme
 ;; Version: 0.1
 
 ;; Permission is hereby granted, free of charge, to any person
@@ -25,23 +25,40 @@
 ;; SOFTWARE.
 
 ;;; Commentary:
-;;
+;; Minimal theme for Emacs 24 with deftheme.
 
 ;;; Code:
 
-(deftheme colors-plain
-  "Minimal theme for Emacs.")
+(deftheme plain
+  "Minimal theme for Emacs 24.")
 
-(let ((bg "#181818")
-      (fg "#e4e4e4"))
+(let ((bg  "#222222")
+      (bg2 "#424242")
+      (bg3 "#545454")
+
+      (fg  "#F1F1F1")
+      (fg2 "#E5E5E5")
+      (fg3 "#CCCCCC")
+      (fg4 "#999999")
+
+      (dark-red     "#C30771")
+      (light-red    "#E32791")
+      (dark-blue    "#008EC4")
+      (light-blue   "#B6D6FD")
+      (dark-cyan    "#20A5BA")
+      (light-cyan   "#4FB8CC")
+      (dark-yellow  "#A89C14")
+      (light-yellow "#FFDD33")
+      )
 
   (custom-theme-set-variables
-   'colors-plain
+   'plain
    '(frame-background-mode (quote dark)))
 
   (custom-theme-set-faces
-   'colors-plain
+   'plain
    `(default ((t (:foreground ,fg :background ,bg))))
+   `(cursor ((t (:background ,light-blue))))
    )
   )
 
@@ -50,13 +67,7 @@
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory
                 (file-name-directory load-file-name))))
-;; Automatically add this theme to the load path.
 
-(provide-theme 'colors-plain)
+(provide-theme 'plain)
 
-;; Local Variables:
-;; no-byte-compile: t
-;; indent-tabs-mode: nil
-;; End:
-
-;;; emacs-colors-plain.el ends here.
+;;; plain-theme.el ends here.
